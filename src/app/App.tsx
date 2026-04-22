@@ -77,8 +77,9 @@ function App() {
           <ModeSelector onSelectMode={handleModeSelect} />
         ) : (
           <>
-            <button onClick={handleNewGame} className="mb-4 px-4 py-2 bg-gray-600 text-white rounded">
-              ← В меню
+            <button onClick={handleNewGame} className="mb-8 flex items-center gap-2 px-5 py-2.5 text-indigo-600 font-bold hover:bg-indigo-50 rounded-full transition-all border-2 border-indigo-100 bg-white shadow-sm hover:border-indigo-300 hover:scale-105 active:scale-95 group">
+             <span className="transition-transform group-hover:-translate-x-1">←</span>
+              В меню
             </button>
             <GameBoard
               key={gameId} // ЭТОТ КЛЮЧ РЕШАЕТ ВСЕ ПРОБЛЕМЫ СО СБРОСОМ
