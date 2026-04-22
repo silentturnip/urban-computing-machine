@@ -21,7 +21,7 @@ export function HumanVsGAPanel({ gameStarted, onGameStart, onRestart }: HumanVsG
   const [currentGAStats, setCurrentGAStats] = useState<GAStats | null>(null);
   
   const gaRef = useRef<GeneticAlgorithm>(new GeneticAlgorithm());
-  const autoPlayTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const autoPlayTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isAutoPlayingRef = useRef(false);
 
   // Очистка таймеров при закрытии компонента

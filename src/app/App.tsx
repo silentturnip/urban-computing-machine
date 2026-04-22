@@ -46,8 +46,10 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8 relative">
-  {/* Контейнер для верхней панели управления */}
-    <div className="flex flex-col md:flex-row md:justify-end mb-4 md:mb-0 md:absolute md:top-8 md:right-8 z-50">
+  {/* Основной контейнер теперь имеет relative, чтобы кнопка позиционировалась относительно него */}
+    <div className="max-w-7xl mx-auto relative">
+      {/* Кнопка теперь привязана к правому краю контента (right-0) */}
+      <div className="flex flex-col md:flex-row md:justify-end mb-6 md:mb-0 md:absolute md:top-0 md:right-0 z-50"></div>
       <button
         onClick={toggleAbout}
         className="flex items-center justify-center gap-2 px-5 py-2.5 text-indigo-600 font-semibold hover:bg-indigo-100 rounded-full transition-all border border-indigo-200 bg-white/70 backdrop-blur-md shadow-sm hover:scale-105 active:scale-95"
