@@ -40,14 +40,35 @@ function App() {
     setGameId(prev => prev + 1); // Обнуляем текущую игру, не выходя в меню
   };
 
+  const toggleAbout = () => {
+    setShowAbout(!showAbout);
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8">
-      <div className="max-w-7xl mx-auto">
-        <header className="text-center mb-8">
-          <h1 className="text-5xl font-bold text-indigo-900 mb-2">🐂 Быки и Коровы 🐄</h1>
-          <button onClick={() => setShowAbout(!showAbout)} className="text-indigo-600 underline">
-            {showAbout ? 'Вернуться к игре' : 'Об игре'}
-          </button>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8 relative">
+  {/* Контейнер для верхней панели управления */}
+    <div className="flex flex-col md:flex-row md:justify-end mb-4 md:mb-0 md:absolute md:top-8 md:right-8 z-50">
+      <button
+        onClick={toggleAbout}
+        className="flex items-center justify-center gap-2 px-5 py-2.5 text-indigo-600 font-semibold hover:bg-indigo-100 rounded-full transition-all border border-indigo-200 bg-white/70 backdrop-blur-md shadow-sm hover:scale-105 active:scale-95"
+      >
+        {showAbout ? (
+          <><span className="text-xl">←</span> Вернуться к игре</>
+        ) : (
+          <><span className="text-xl">📖</span> Об игре</>
+        )}
+      </button>
+    </div>
+
+    <div className="max-w-7xl mx-auto">
+      {/* Добавили небольшой отступ сверху (pt-8), чтобы на мобилках заголовок не прилипал */}
+      <header className="text-center mb-10 pt-4 md:pt-4">
+        <h1 className="text-4xl md:text-6xl font-black text-indigo-900 mb-3 tracking-tight">
+          🐂 Быки и Коровы 🐄
+        </h1>
+        <p className="text-gray-500 text-base md:text-lg font-medium italic">
+          Генетический алгоритм против человеческой логики
+        </p>
         </header>
 
         {showAbout ? (
